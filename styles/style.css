@@ -1,0 +1,144 @@
+*{
+    background-color: #F3F5FC;
+
+}
+
+
+.zona{
+
+    margin: auto;
+    margin: 40px;
+    background-color: #F3F5FC;
+    display: flex;
+    max-width: 100%;
+    min-width: 0;
+    flex-shrink: 1;
+    flex-basis: 200px;
+}
+
+
+.logo_encriptador_alura{
+    width: 120px;
+    height: 48px;
+    background-color: #F3F5FC;
+}
+
+.zona_ingreso_texto{
+    margin: auto;
+    border: 0px;
+    margin-top: 128px;
+    margin-left: 80px;
+
+}
+
+.input_texto_requerido{
+    margin: auto;
+    width: 577px;
+    height: 48px;
+    border: 0px solid transparent;
+}
+
+.zona_ayuda_texto{
+    margin: auto;
+    margin-top: 635px;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.exclamacion_ayuda{
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+}
+
+.ayuda_llenado_encriptador{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color: #495057;
+
+}
+
+.botones{
+    margin: auto;
+    margin-top: 16px;
+
+}
+
+
+.boton_encriptar{
+
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px inset;
+    background-color: #0A3871;
+    color: white;
+    border-color: #0A3871;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    box-shadow: none;
+    border-style: solid;
+}
+
+.boton_desencriptar{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px inset;
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-color: #0A3871;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    box-shadow: none;
+    border-style: solid;
+}
+
+.zona_salida_texto{
+    margin: auto;
+    width: 400px;
+    height: 944px;
+    background-color: white;
+    border-radius: 32px;
+
+
+}
+
+.logo_muneco{
+    margin: auto;
+    margin-top: 243px;
+    margin-left: 32px;
+    background-color: white;
+}
+
+.titulo_respuesta{
+    margin: auto;
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-right: 32px;
+    background-color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    color: #343A40;
+}
+
+.titulo_respuesta_ayuda{
+    margin: auto;
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-right: 32px;
+    background-color: white;
+    color: #495057;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
