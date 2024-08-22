@@ -3,17 +3,29 @@
 
 }
 
+.html{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.lienzo{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
 
+}
 .zona{
 
     margin: auto;
     margin: 40px;
     background-color: #F3F5FC;
     display: flex;
-    max-width: 100%;
-    min-width: 0;
-    flex-shrink: 1;
-    flex-basis: 200px;
+    gap: 80px
+    
+
+
 }
 
 
@@ -23,19 +35,37 @@
     background-color: #F3F5FC;
 }
 
+.seccion__ingreso__texto{
+    display: flex;
+    flex-direction: column;
+
+}
+
 .zona_ingreso_texto{
     margin: auto;
     border: 0px;
     margin-top: 128px;
-    margin-left: 80px;
+    text-align: left;
 
 }
 
 .input_texto_requerido{
     margin: auto;
+    padding: 0px;
     width: 577px;
     height: 48px;
     border: 0px solid transparent;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color: #0A3871;
+}
+
+.input_texto_requerido::placeholder{
+    font-size: 32px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color: #0A3871;
 }
 
 .zona_ayuda_texto{
@@ -62,13 +92,16 @@
 
 .botones{
     margin: auto;
+    display: flex;
+    gap: 24px;
     margin-top: 16px;
 
 }
 
 
 .boton_encriptar{
-
+    margin: auto;
+    margin-right: 0;
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -85,6 +118,8 @@
 }
 
 .boton_desencriptar{
+    margin: auto;
+    margin-left: 0;
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -108,18 +143,58 @@
     border-radius: 32px;
 
 
+
 }
+
+.palabra_codificada{
+    margin: auto;
+    margin: 32px;
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 336px;
+    height: 781px;
+    background-color: white;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color: #495057;
+    border: 0px solid transparent;
+
+}
+
 
 .logo_muneco{
     margin: auto;
     margin-top: 243px;
     margin-left: 32px;
+    margin-right: 32px;
     background-color: white;
+}
+
+.btn__copiar{
+    margin:auto;
+    padding: 0px;
+    margin-top: 30px;
+    margin-left: 32px;
+    margin-right: 32px;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px inset;
+    background-color: white;
+    color: #0A3871;
+    border-color: #0A3871;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    box-shadow: none;
+    border-style: solid;
 }
 
 .titulo_respuesta{
     margin: auto;
-    margin-top: 16px;
+    margin-top: 32px;
     margin-left: 32px;
     margin-right: 32px;
     background-color: white;
@@ -141,4 +216,24 @@
     font-family: "Inter", sans-serif;
     font-weight: 400;
     text-align: center;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: #0A3871;
+    color: white;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.letras__footer{
+    background-color: #0A3871;
+}
+
+@media (max-width:768px){
+    
+    
+
 }

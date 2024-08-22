@@ -10,65 +10,37 @@
 <body class="lienzo">
      <div class="zona">
         <img class="logo_encriptador_alura" src="/images/Logo.png" alt="logo encriptador alura">
-        <div class="zona_ingreso_texto">
-            <input class="input_texto_requerido" type="text" placeholder="Ingrese el texto aqui" name="texto_requerido">
-            
-            <div class="zona_ayuda_texto">
-                <img class="exclamacion_ayuda" src="/images/exclamacion.png" alt="exlamacion_alura"> 
-                <h3 class="ayuda_llenado_encriptador">Solo letras minúsculas y sin acentos</h3>
-            </div>
-
-            <div class="botones">
-                <button class="boton_encriptar">Encriptar</button>
-                <button class="boton_desencriptar">Desencriptar</button>
-            </div>
-        </div>
-
-        <div class="zona_salida_texto">
-            <img class="logo_muneco" src="/images/Muneco.png" alt="muneco_encriptador">
-            <h3 class="titulo_respuesta">Ningun mensaje fue encontrado</h2>
-            <h5 class="titulo_respuesta_ayuda">Ingresa el texto que desees encriptar o desencriptar.</h5>
-        </div>  
-    </div>
-    <!--colocamos las imágenes del proyecto-->
-
-    
-
-
-
-
-    
-
-    <!--<header class="header">
-        <nav class="header_menu">
-            <a class="header_menu_link" href="index.html">Home</a>
-            <a class="header_menu_link" href="about.html">Sobre mí</a>
-        </nav>-->
-    <!--</header>
-    <main class="presentacion">
-        <sectionc class="presentacion_contenido">
-            <h1 class="presentacion_contenido_titulo">Eleve tu negocio digital a otro nivel <strong class="titulo-destaque">con un Front-end de calidad!</strong>
-            </h1>
-            <p class="presentacion_contenido_texto">¡Hola! Soy Ana García, desarrolladora Front-end con especialización en React, HTML y CSS. 
-                Ayudo a pequeños negocios y diseñadores a llevar a cabo buenas ideas. ¿Hablamos?
-            </p>
-           
-            <div class="presentacion_enlaces">
-                <h2 class="presentacion_enlaces_subtitulo">Accede a mis redes:</h2>
-                <a class="presentacion_enlaces_link" href="https://www.instagram.com/">
-                    <img src="./Assets/instagram.png">
-                    Instagram                   
-                </a>
+        <section class="seccion__ingreso__texto">
+            <div class="zona_ingreso_texto">
+                <input class="input_texto_requerido" type="text" id="PalabraUsuario" placeholder="Ingrese el texto aqui" name="texto_requerido">
                 
-                <a class="presentacion_enlaces_link" href="https://github.com/">
-                    <img src="./Assets/github.png">
-                    Github                  
-                </a>
-                    
-            </div>
+                <div class="zona_ayuda_texto">
+                    <img class="exclamacion_ayuda" src="/images/exclamacion.png" alt="exlamacion_alura"> 
+                    <h3 class="ayuda_llenado_encriptador">Solo letras minúsculas y sin acentos</h3>
+                </div>
 
-        </sectionc>
-        <img class="presentacion_imagen" src="./Assets/Imagem.png" alt="Imagen de Ana Garcia trabajando">
-    </main>-->
+                <div class="botones">
+                    <button onclick="codificarPalabra()" class="boton_encriptar" id="EncriptarPalabra">Encriptar</button>
+                    <button onclick="decodificarPalabra()" class="boton_desencriptar" id="DesencriptarPalabra">Desencriptar</button>
+                </div>
+            </div>
+        </section>
+
+        <section  class="seccion__salida_texto"> 
+            <div class="zona_salida_texto">
+                <textarea class="palabra_codificada" id="PalabraCodificada" readonly ></textarea>
+                <img class="logo_muneco" id="LogoMuneco" src="/images/Muneco.png" alt="muneco_encriptador">
+                <h3 class="titulo_respuesta" id="TituloRespuesta">Ningun mensaje fue encontrado</h3>
+                <h3 class="titulo_respuesta_ayuda" id="TituloRespuestaAyuda">Ingresa el texto que desees encriptar o desencriptar.</h3>
+                <button onclick="copiarPalabraDecodificada()" class="btn__copiar" id="CopiarPalabra">Copiar</button>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p class="letras__footer">Desarrollado por Yrvin Narro</p>
+    </footer>
+    
+    <script src="app.js"></script>
 </body>
+
 </html>
