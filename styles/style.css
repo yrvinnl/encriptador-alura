@@ -10,22 +10,29 @@
     text-align: center;
 }
 .lienzo{
+    margin:auto;
+    margin: 0px;
     display: flex;
     flex-direction:column;
-    justify-content: center;
-    text-align: center;
+    justify-content: left;
+    text-align: left;
 
 }
-.zona{
 
-    margin: auto;
+.zona{
+    margin:auto;
     margin: 40px;
+    
+}
+
+.container__zona__encriptacion{
+    margin: auto;
+    margin-left:200px;
+    margin-right: 40px;
     background-color: #F3F5FC;
     display: flex;
-    gap: 80px
-    
-
-
+    flex-direction:row;
+    justify-content:left;
 }
 
 
@@ -38,21 +45,28 @@
 .seccion__ingreso__texto{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
 }
 
 .zona_ingreso_texto{
-    margin: auto;
+
+    margin: 0px;
     border: 0px;
-    margin-top: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
     text-align: left;
+    
 
 }
 
 .input_texto_requerido{
     margin: auto;
+    margin-top: 128px;
+    margin-left: 0px;
     padding: 0px;
-    width: 577px;
+    width: 656px;
     height: 48px;
     border: 0px solid transparent;
     font-size: 32px;
@@ -72,7 +86,12 @@
     margin: auto;
     margin-top: 635px;
     margin-bottom: 0;
+    margin-left: 0%;
     display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: left;
+
 }
 
 .exclamacion_ayuda{
@@ -93,7 +112,8 @@
 .botones{
     margin: auto;
     display: flex;
-    gap: 24px;
+    flex-direction: row;
+    gap: 3.6%;
     margin-top: 16px;
 
 }
@@ -101,7 +121,6 @@
 
 .boton_encriptar{
     margin: auto;
-    margin-right: 0;
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -119,7 +138,6 @@
 
 .boton_desencriptar{
     margin: auto;
-    margin-left: 0;
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -135,15 +153,24 @@
     border-style: solid;
 }
 
+.seccion__salida__texto{
+    margin: auto;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+
 .zona_salida_texto{
     margin: auto;
     width: 400px;
     height: 944px;
     background-color: white;
     border-radius: 32px;
-
-
-
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 .palabra_codificada{
@@ -159,6 +186,7 @@
     font-family: "Inter", sans-serif;
     color: #495057;
     border: 0px solid transparent;
+    
 
 }
 
@@ -174,7 +202,7 @@
 .btn__copiar{
     margin:auto;
     padding: 0px;
-    margin-top: 30px;
+    margin-top: 32px;
     margin-left: 32px;
     margin-right: 32px;
     width: 328px;
@@ -232,8 +260,161 @@
     background-color: #0A3871;
 }
 
-@media (max-width:768px){
-    
-    
+@media (max-width:1400px){
+    .lienzo{
+        height: 100%;
+        width: 100%;
+    }
+    .zona{
+        margin:auto;
+        margin:7%;
+    }
 
+    .container__zona__encriptacion{
+        margin: auto;
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    
+    .seccion__ingreso__texto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+    }
+
+    .zona_ingreso_texto{
+        margin: auto;
+        margin-top: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .input_texto_requerido{
+        margin: auto;
+        height: 288px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .zona_ayuda_texto{
+        margin-top: 25%;
+        margin-left:6%;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        justify-content: left;
+    
+    }
+
+    .seccion__salida__texto{
+        margin: auto;
+        margin-top: 8%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        width: 100%;
+        height: 100%;
+    }
+
+    .zona_salida_texto{
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+
+    .logo_muneco{
+        display:none
+    }
+
+    .palabra_codificada{
+        margin: auto;
+        margin: 5%;
+        width: 90%;
+        height: 180px;
+    }
+
+    .titulo_respuesta{
+        margin:auto;
+        margin: 3%;
+    }
+
+    .titulo_respuesta_ayuda{
+        margin:auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    .btn__copiar{   
+        margin: auto;
+        margin-bottom: 5%;
+        width: 90%;
+    }
+}    
+
+
+@media (max-width:740px){
+    .lienzo{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .zona{
+        margin:auto;
+        margin:5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .botones{
+        margin: auto;
+        margin:0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2.4%;
+    }
+    
+    .boton_desencriptar{
+        margin-top: 5%;
+    }
+
+   .container__zona__encriptacion{
+        margin: auto;
+        margin: 0%;
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+   }
+
+   .zona_ingreso_texto{
+        margin: auto;
+        margin:0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+   }
+
+   .input_texto_requerido{
+        margin: auto;
+        margin-top: 20%;
+        width: 100%;
+        height: 150px;
+
+    
 }
+}
+
+

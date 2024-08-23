@@ -3,48 +3,53 @@ window.onload = function() {
     document.getElementById('CopiarPalabra').style.display = 'none';
 };
 
-//Funcion codificar palabra
+
+//detectamos los caracteres especiales
+function mensajesCaracteresEspeciales(){
+    let palabra_usuario=document.getElementById("PalabraUsuario").value;
+    let caracteresEspeciales = /[\[\]°%&\/´¡!@#$%^&*(),.¿?":{}|<>]/g;
+    if (caracteresEspeciales.test(palabra_usuario)) {
+        return "1";
+    } else {
+        return "0";
+    }
+}
+//Funcion final de codificar palabra
 function codificarPalabra(){;
-    let palabra=String(document.getElementById("PalabraUsuario").value) //Obtenemos la palabra del input del decodificador
-    let i=0; //variable iterador
-    palabra_arreglo= palabra.split(""); /*convertimos la palabra en un arreglo y le asignamos una variable*/
-    
-    /*cambiamos las vocales con las codificaciones asignada*/
-    while (i < palabra_arreglo.length) {  
-        switch (palabra_arreglo[i]) {
-            case "a":
-                palabra_arreglo[i]= "ai"; 
-                break;
-        
-            case "e":
-                palabra_arreglo[i]= "enter"; 
-                break;
+    let i=0; //variable iterador´
+    let palabra= document.getElementById("PalabraUsuario").value
+    let palabra_arreglo= palabra.split(""); /*convertimos la palabra en un arreglo y le asignamos una variable*/           
+        /*cambiamos las vocales con las codificaciones asignada*/
+        while (i < palabra_arreglo.length) {  
+            switch (palabra_arreglo[i]) {
+                case "a":
+                    palabra_arreglo[i]= "ai"; 
+                    break;
             
-            case "i":
-                palabra_arreglo[i]= "imes";
-                break;
-        
-            case "o":
-                palabra_arreglo[i]= "ober";
-                break;
+                case "e":
+                    palabra_arreglo[i]= "enter"; 
+                    break;
+                
+                case "i":
+                    palabra_arreglo[i]= "imes";
+                    break;
             
-            case "u":
-                palabra_arreglo[i]= "ufat";
-                break;                              
+                case "o":
+                    palabra_arreglo[i]= "ober";
+                    break;
+                
+                case "u":
+                    palabra_arreglo[i]= "ufat";
+                    break;                              
+            }
+            i++;  
         }
-        i++;  
-      }
-    document.getElementById('PalabraUsuario').value=""
-    ocultarImagenTexto();
-    mostraResultado()
+        document.getElementById('PalabraUsuario').value=""
+        ocultarImagenTexto();
+        mostraResultado()
+
 }
 
-//Funcion para asignar dinamicamente los elementos en html. Recordar que se va a cambiar dinamicamente
-function asignarTextoElemento(elemento , texto){
-    let elementoHTML= document.querySelector(elemento); //Debemos seleccionar el ODM del index
-    elementoHTML.innerHTML= texto; //le asignamos un texto
-    return;
-}
 
 //Mostrar resultado de palabra normal a codificada
 function mostraResultado(){
@@ -62,43 +67,156 @@ function ocultarImagenTexto(){
     document.getElementById('CopiarPalabra').style.display = 'inline';
 }
 
+//Funcion para ponerlo todo como el inicio
+function mostrarElementosIniciales(){
+document.getElementById("LogoMuneco").style.display= "inline";
+document.getElementById("TituloRespuesta").style.display= "inline";
+document.getElementById("TituloRespuestaAyuda").style.display= "inline";
+document.getElementById('PalabraCodificada').style.display = 'none';
+document.getElementById('CopiarPalabra').style.display = 'none';
+}
 
-//Funcion para decodificar la palabra -2
+
+//Funcion para decodificar la palabra
 function decodificarPalabra() {
     const input = document.getElementById('PalabraUsuario').value;
-    let PalabraDecodificada = input
+    let PalabraDecodificada = input //reemplazamos con los valores de la decodificacion
         .replace(/enter/g, 'e')
         .replace(/imes/g, 'i')
         .replace(/ai/g, 'a')
         .replace(/ober/g, 'o')
-        .replace(/ufat/g, 'u');        
+        .replace(/ufat/g, 'u')        
     ocultarImagenTexto();
     document.querySelector(".palabra_codificada").innerText= PalabraDecodificada;
-        document.getElementById('PalabraUsuario').value=""
+        document.getElementById('PalabraUsuario').value="";
 }
 
 function copiarPalabraDecodificada(){
-    let palabraCodificada=document.getElementById("PalabraCodificada")
+    let palabraCodificada=document.getElementById("PalabraCodificada");
 
     palabraCodificada.select();
     palabraCodificada.setSelectionRange(0,99999);
-    navigator.clipboard.writeText(palabraCodificada.value)
-    document.getElementById('PalabraUsuario').value=""
+    navigator.clipboard.writeText(palabraCodificada.value);
+    document.getElementById('PalabraUsuario').value="";
 }
 
+//Funcion que entrega palabra lista para codificar
+function listoParaEncriptar(){
+    let palabra=document.getElementById("PalabraUsuario").value;
+    let palabraSinTilde=palabra
+        .replace(/á/g, 'a')
+        .replace(/é/g, 'e')
+        .replace(/í/g, 'i')
+        .replace(/ó/g, 'o')
+        .replace(/ú/g, 'u')
+        .replace(/Á/g, 'A')
+        .replace(/É/g, 'E')
+        .replace(/Í/g, 'I')
+        .replace(/Ó/g, 'O')
+        .replace(/Ú/g, 'U');
+    let palabraMinuscula=palabraSinTilde.toLowerCase()
+    let i=0; //variable iterador´
+    palabra_arreglo= palabraMinuscula.split(""); /*convertimos la palabra en un arreglo y le asignamos una variable*/           
+        /*cambiamos las vocales con las codificaciones asignada*/
+        while (i < palabra_arreglo.length) {  
+            switch (palabra_arreglo[i]) {
+                case "a":
+                    palabra_arreglo[i]= "ai"; 
+                    break;
+            
+                case "e":
+                    palabra_arreglo[i]= "enter"; 
+                    break;
+                
+                case "i":
+                    palabra_arreglo[i]= "imes";
+                    break;
+            
+                case "o":
+                    palabra_arreglo[i]= "ober";
+                    break;
+                
+                case "u":
+                    palabra_arreglo[i]= "ufat";
+                    break;                              
+            }
+            i++;  
+        }
+        
+        palabraCodificada=
+        
+        document.getElementById('PalabraUsuario').value=""
+        let PalabraCodificada=palabra_arreglo.join("");
+        ocultarImagenTexto();
+        //mostraResultado()
+        
+}
 
+//funcion que cambias mayúsculas
+function cambiarMayusculas(){
+    let palabra=document.getElementById("PalabraUsuario").value;
 
+    let palabraMinuscula=palabra.toLowerCase();
 
-//-------------------------------------
-/*function reemplazarLetras(texto) {
-    return  texto.replace("ai", "a");
-                .replace("enter", "e");
-                .replace("imes", "i");
-                ..replace("ober", "o");
-                .replace("ufat", "u");
+    document.getElementById("PalabraUsuario").value=palabraMinuscula;
 
 }
 
+//Funcion que reemplaza las tildes
+function reemplazarTildes(){
+    let palabra=document.getElementById("PalabraUsuario").value;
+    let palabraSinTilde=palabra
+        .replace(/á/g, 'a')
+        .replace(/é/g, 'e')
+        .replace(/í/g, 'i')
+        .replace(/ó/g, 'o')
+        .replace(/ú/g, 'u')
+        .replace(/Á/g, 'A')
+        .replace(/É/g, 'E')
+        .replace(/Í/g, 'I')
+        .replace(/Ó/g, 'O')
+        .replace(/Ú/g, 'U');
+
+    document.getElementById("PalabraUsuario").value=palabraSinTilde;
+}
+
+//funcion codificar palabra preliminar
+function primerCodificarPalabra(iniciador){        
+//let caracteresEspeciales=mensajesCaracteresEspeciales()
+    
+    let i=0; //variable iterador´
+    palabra= document.getElementById("PalabraUsuario").value
+    palabra_arreglo= palabra.split(""); /*convertimos la palabra en un arreglo y le asignamos una variable*/           
+        /*cambiamos las vocales con las codificaciones asignada*/
+        while (i < palabra_arreglo.length) {  
+            switch (palabra_arreglo[i]) {
+                case "a":
+                    palabra_arreglo[i]= "ai"; 
+                    break;
+            
+                case "e":
+                    palabra_arreglo[i]= "enter"; 
+                    break;
+                
+                case "i":
+                    palabra_arreglo[i]= "imes";
+                    break;
+            
+                case "o":
+                    palabra_arreglo[i]= "ober";
+                    break;
+                
+                case "u":
+                    palabra_arreglo[i]= "ufat";
+                    break;                              
+            }
+            i++;  
+        }
+        document.getElementById('PalabraUsuario').value=""
+        ocultarImagenTexto();
+        mostraResultado()
 
 
-console.log(reemplazarLetras("aiimesufat")); // "patober"*/
+}
+
+document.getElementById("PalabraCodificada").value=""
